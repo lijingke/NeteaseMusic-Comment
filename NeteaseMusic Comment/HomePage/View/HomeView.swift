@@ -27,6 +27,23 @@ class HomeView: UIView {
         return label
     }()
     
+    lazy var inputFiled: UITextField = {
+        let filed = UITextField()
+        filed.borderStyle = .roundedRect
+        filed.keyboardType = .asciiCapable
+        return filed
+    }()
+    
+    lazy var confirmBtn: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setTitle("确定", for: .normal)
+        btn.setTitleColor(.systemBlue, for: .normal)
+        btn.layer.borderWidth = 0.5
+        btn.layer.borderColor = UIColor.systemBlue.cgColor
+        btn.layer.cornerRadius = 5
+        return btn
+    }()
+    
 }
 
 extension HomeView {
@@ -34,8 +51,21 @@ extension HomeView {
     private func setupUI() {
         backgroundColor = .white
         addSubview(titleLabel)
+        addSubview(inputFiled)
+        addSubview(confirmBtn)
         titleLabel.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+            make.top.equalToSuperview().offset(200)
+            make.centerX.equalToSuperview()
+        }
+        inputFiled.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.left.equalToSuperview().offset(30)
+            make.right.equalToSuperview().offset(-30)
+        }
+        confirmBtn.snp.makeConstraints { (make) in
+            make.top.equalTo(inputFiled.snp.bottom).offset(10)
+            make.right.equalTo(inputFiled)
+            make.width.equalTo(50)
         }
     }
     
