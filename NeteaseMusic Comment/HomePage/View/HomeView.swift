@@ -51,6 +51,17 @@ class HomeView: UIView {
         return btn
     }()
     
+    lazy var jumpBtn: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setTitle("跳转到网易云音乐复制昵称", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = .systemRed
+        btn.layer.cornerRadius = 5
+        btn.addTarget(self, action: #selector(self.jumpAction), for: .touchUpInside)
+        return btn
+    }()
+
+    
     lazy var rotateView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemTeal
@@ -65,6 +76,13 @@ extension HomeView {
     @objc func tapAction() {
         inputField.resignFirstResponder()
     }
+    
+    @objc func jumpAction() {
+        let customURL = "orpheus://"
+        if UIApplication.shared.canOpenURL(URL(string: customURL)!) {
+            UIApplication.shared.open(URL(string: customURL)!, options: [:], completionHandler: nil)
+        }
+    }
 }
 
 // MARK: - UI
@@ -76,24 +94,35 @@ extension HomeView {
         addSubview(inputField)
         addSubview(confirmBtn)
         addSubview(rotateView)
+        addSubview(jumpBtn)
+
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(200)
             make.centerX.equalToSuperview()
         }
+        
         inputField.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.left.equalToSuperview().offset(30)
             make.right.equalToSuperview().offset(-30)
         }
+        
         confirmBtn.snp.makeConstraints { (make) in
             make.top.equalTo(inputField.snp.bottom).offset(10)
             make.right.equalTo(inputField)
             make.width.equalTo(60)
         }
+        
         rotateView.snp.makeConstraints { (make) in
             make.top.equalTo(inputField.snp.bottom).offset(100)
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 50, height: 50))
+        }
+        
+        jumpBtn.snp.makeConstraints { (make) in
+            make.top.equalTo(rotateView.snp.bottom)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(250)
         }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction))
@@ -105,7 +134,6 @@ extension HomeView {
     public func rotate() {
         rotateView.transform = CGAffineTransform(translationX: 0, y: -60)
         UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveLinear, .repeat, .autoreverse], animations: {
-            
             self.rotateView.transform = CGAffineTransform(translationX: 0, y: 60)
         }, completion: nil)
     }
