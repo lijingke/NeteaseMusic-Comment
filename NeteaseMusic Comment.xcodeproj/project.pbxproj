@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -105,7 +105,6 @@
 				A4F8EA519ADAD1A4165CE42F /* Pods-NeteaseMusic CommentUITests.debug.xcconfig */,
 				59BF947A65614C3B03A482DF /* Pods-NeteaseMusic CommentUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -135,8 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				54FEEFE324ADCE2D00ED97F4 /* AppDelegate.swift */,
-				54FEF01624ADCE5E00ED97F4 /* HomeViewController.swift */,
-				54FEF01A24ADD21A00ED97F4 /* HomeView.swift */,
+				54FEF01C24ADD58C00ED97F4 /* HomePage */,
 				54FEEFEF24ADCE2E00ED97F4 /* Assets.xcassets */,
 				54FEEFF424ADCE2E00ED97F4 /* Info.plist */,
 				54FEF01824ADCF0700ED97F4 /* Launch Screen.storyboard */,
@@ -161,6 +159,39 @@
 				54FEF00A24ADCE2E00ED97F4 /* Info.plist */,
 			);
 			path = "NeteaseMusic CommentUITests";
+			sourceTree = "<group>";
+		};
+		54FEF01C24ADD58C00ED97F4 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				54FEF01F24ADD5AA00ED97F4 /* Model */,
+				54FEF01E24ADD5A200ED97F4 /* View */,
+				54FEF01D24ADD59800ED97F4 /* Controller */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		54FEF01D24ADD59800ED97F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				54FEF01624ADCE5E00ED97F4 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		54FEF01E24ADD5A200ED97F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54FEF01A24ADD21A00ED97F4 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54FEF01F24ADD5AA00ED97F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CF599BC5A9E8AB510A32ACFE /* Frameworks */ = {

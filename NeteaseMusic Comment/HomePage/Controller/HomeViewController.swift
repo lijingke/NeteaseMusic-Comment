@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        setupUI()
     }
     
     lazy var mainView: HomeView = {
@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     private func setupUI() {
         view.addSubview(mainView)
-        
+        mainView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
 }
