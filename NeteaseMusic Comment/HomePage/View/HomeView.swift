@@ -126,7 +126,7 @@ extension HomeView {
         }
         
         jumpBtn.snp.makeConstraints { (make) in
-            make.top.equalTo(rotateView.snp.bottom)
+            make.top.equalTo(rotateView.snp.bottom).offset(60)
             make.centerX.equalToSuperview()
             make.width.equalTo(250)
         }

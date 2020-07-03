@@ -10,7 +10,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +19,6 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Come On")
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         recognition()
     }
@@ -65,11 +63,17 @@ extension HomeViewController {
         
         //识别剪贴板中的内容
         if let paste = UIPasteboard.general.string, let match = regex?.firstMatch(in: paste, options: [], range: NSRange(location: 0, length: paste.count)) {
+                        
             let matchString = (paste as NSString).substring(with: match.range)
+            let userId = matchString.replacingOccurrences(of: "id=", with: "")
+
+            if mainView.userId == userId {
+                return
+            }
+
             let alert = UIAlertController(title: "要打开剪贴板中的链接吗？", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "打开", style: .default, handler: { [weak self] (action) in
-                let id = matchString.replacingOccurrences(of: "id=", with: "")
-                self?.mainView.userId = id
+                self?.mainView.userId = userId
             }))
             alert.addAction(UIAlertAction(title: "忽略", style: .cancel, handler: nil))
             self.navigationController?.present(alert, animated: true, completion: nil)
