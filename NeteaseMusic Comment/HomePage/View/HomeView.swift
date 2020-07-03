@@ -11,6 +11,12 @@ import SnapKit
 
 class HomeView: UIView {
     
+    public var userId: String? {
+        didSet {
+            inputField.text = userId
+        }
+    }
+    
     // MARK: Lift Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
