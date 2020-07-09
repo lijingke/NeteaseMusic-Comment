@@ -32,29 +32,19 @@ class PersonalView: UIView {
     }()
     
     lazy var backgroundCover:UIImageView = {
-        
         let imageView = UIImageView()
-        
         imageView.contentMode = .scaleAspectFill
-        
         imageView.alpha = 0.15
-        
         imageView.clipsToBounds=true
         
         let view = UIVisualEffectView.init(effect: UIBlurEffect.init(style: .light))
-        
         view.backgroundColor = UIColor.white.withAlphaComponent(0.15)
-        
         imageView.addSubview(view)
-        
         imageView.sendSubviewToBack(view)
         
         view.snp.makeConstraints{ (make)in
-            
             make.edges.equalToSuperview()
-            
         }
-        
         return imageView
         
     }()
