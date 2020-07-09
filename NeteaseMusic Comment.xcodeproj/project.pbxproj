@@ -13,6 +13,7 @@
 		541C085F24B6F37E0067967D /* HomePageInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541C085E24B6F37E0067967D /* HomePageInterface.swift */; };
 		541C086224B6F9050067967D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541C086124B6F9050067967D /* UIColor+Extension.swift */; };
 		541F818424AF134E00610174 /* PraiseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F818324AF134E00610174 /* PraiseLayer.swift */; };
+		5450605224B6FE320082E2F3 /* TemplateColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450605124B6FE320082E2F3 /* TemplateColor.swift */; };
 		54FEEFE424ADCE2D00ED97F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FEEFE324ADCE2D00ED97F4 /* AppDelegate.swift */; };
 		54FEEFEE24ADCE2D00ED97F4 /* NeteaseMusic_Comment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54FEEFEC24ADCE2D00ED97F4 /* NeteaseMusic_Comment.xcdatamodeld */; };
 		54FEEFF024ADCE2E00ED97F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FEEFEF24ADCE2E00ED97F4 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		541C085E24B6F37E0067967D /* HomePageInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageInterface.swift; sourceTree = "<group>"; };
 		541C086124B6F9050067967D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		541F818324AF134E00610174 /* PraiseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseLayer.swift; sourceTree = "<group>"; };
+		5450605124B6FE320082E2F3 /* TemplateColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateColor.swift; sourceTree = "<group>"; };
 		54FEEFE024ADCE2D00ED97F4 /* NeteaseMusic Comment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeteaseMusic Comment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54FEEFE324ADCE2D00ED97F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54FEEFED24ADCE2D00ED97F4 /* NeteaseMusic_Comment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NeteaseMusic_Comment.xcdatamodel; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				541F818324AF134E00610174 /* PraiseLayer.swift */,
+				5450605124B6FE320082E2F3 /* TemplateColor.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				54FEF01B24ADD21A00ED97F4 /* HomeView.swift in Sources */,
 				541C086224B6F9050067967D /* UIColor+Extension.swift in Sources */,
 				54FEEFEE24ADCE2D00ED97F4 /* NeteaseMusic_Comment.xcdatamodeld in Sources */,
+				5450605224B6FE320082E2F3 /* TemplateColor.swift in Sources */,
 				541F818424AF134E00610174 /* PraiseLayer.swift in Sources */,
 				541C085B24B6F2910067967D /* PersonalViewController.swift in Sources */,
 				541C085D24B6F2CF0067967D /* PersonalView.swift in Sources */,

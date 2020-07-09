@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIColor {
-    public convenience init(hex: UInt32, alpha: CGFloat = 1.0) {
+    public convenience init(hex: UInt, alpha: CGFloat = 1.0) {
         let r = (hex & 0xff0000) >> 16
         let g = (hex & 0xff00) >> 8
         let b = hex & 0xff
@@ -19,7 +19,7 @@ extension UIColor {
                   alpha: alpha)
     }
     
-    public static func rgb(hex: UInt32, alpha: CGFloat? = 1.0) -> UIColor {
+    public static func rgb(hex: UInt, alpha: CGFloat? = 1.0) -> UIColor {
         return UIColor(hex: hex, alpha: alpha ?? 1.0)
     }
     
