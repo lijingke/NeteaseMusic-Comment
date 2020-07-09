@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		25AE4B236A933F06607F7C68 /* Pods_NeteaseMusic_Comment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4157C3F0A39F923E3AF001 /* Pods_NeteaseMusic_Comment.framework */; };
+		541C085B24B6F2910067967D /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541C085A24B6F2910067967D /* PersonalViewController.swift */; };
+		541C085D24B6F2CF0067967D /* PersonalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541C085C24B6F2CF0067967D /* PersonalView.swift */; };
+		541C085F24B6F37E0067967D /* HomePageInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541C085E24B6F37E0067967D /* HomePageInterface.swift */; };
+		541C086224B6F9050067967D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541C086124B6F9050067967D /* UIColor+Extension.swift */; };
+		541F818424AF134E00610174 /* PraiseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541F818324AF134E00610174 /* PraiseLayer.swift */; };
 		54FEEFE424ADCE2D00ED97F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FEEFE324ADCE2D00ED97F4 /* AppDelegate.swift */; };
 		54FEEFEE24ADCE2D00ED97F4 /* NeteaseMusic_Comment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54FEEFEC24ADCE2D00ED97F4 /* NeteaseMusic_Comment.xcdatamodeld */; };
 		54FEEFF024ADCE2E00ED97F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FEEFEF24ADCE2E00ED97F4 /* Assets.xcassets */; };
@@ -42,6 +47,11 @@
 		2564056C270DEB8BAF111509 /* Pods_NeteaseMusic_CommentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeteaseMusic_CommentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		383905E7C1EC10B5B35A7C26 /* Pods-NeteaseMusic Comment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeteaseMusic Comment.release.xcconfig"; path = "Target Support Files/Pods-NeteaseMusic Comment/Pods-NeteaseMusic Comment.release.xcconfig"; sourceTree = "<group>"; };
 		3B5A4FFC437FDC3461D309E1 /* Pods-NeteaseMusic CommentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeteaseMusic CommentTests.release.xcconfig"; path = "Target Support Files/Pods-NeteaseMusic CommentTests/Pods-NeteaseMusic CommentTests.release.xcconfig"; sourceTree = "<group>"; };
+		541C085A24B6F2910067967D /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		541C085C24B6F2CF0067967D /* PersonalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalView.swift; sourceTree = "<group>"; };
+		541C085E24B6F37E0067967D /* HomePageInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageInterface.swift; sourceTree = "<group>"; };
+		541C086124B6F9050067967D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		541F818324AF134E00610174 /* PraiseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseLayer.swift; sourceTree = "<group>"; };
 		54FEEFE024ADCE2D00ED97F4 /* NeteaseMusic Comment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeteaseMusic Comment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54FEEFE324ADCE2D00ED97F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54FEEFED24ADCE2D00ED97F4 /* NeteaseMusic_Comment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NeteaseMusic_Comment.xcdatamodel; sourceTree = "<group>"; };
@@ -108,6 +118,55 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		541C085624B6F2410067967D /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				541C085924B6F25D0067967D /* Model */,
+				541C085824B6F2580067967D /* View */,
+				541C085724B6F24F0067967D /* Controller */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		541C085724B6F24F0067967D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				541C085A24B6F2910067967D /* PersonalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		541C085824B6F2580067967D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				541C085C24B6F2CF0067967D /* PersonalView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		541C085924B6F25D0067967D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		541C086024B6F8FA0067967D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				541C086124B6F9050067967D /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		541F818224AF133900610174 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				541F818324AF134E00610174 /* PraiseLayer.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		54FEEFD724ADCE2D00ED97F4 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +194,9 @@
 			children = (
 				54FEEFE324ADCE2D00ED97F4 /* AppDelegate.swift */,
 				54FEF01C24ADD58C00ED97F4 /* HomePage */,
+				541C085624B6F2410067967D /* Personal */,
+				541F818224AF133900610174 /* Tools */,
+				541C086024B6F8FA0067967D /* Extension */,
 				54FEEFEF24ADCE2E00ED97F4 /* Assets.xcassets */,
 				54FEEFF424ADCE2E00ED97F4 /* Info.plist */,
 				54FEF01824ADCF0700ED97F4 /* Launch Screen.storyboard */,
@@ -164,6 +226,7 @@
 		54FEF01C24ADD58C00ED97F4 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				541C085E24B6F37E0067967D /* HomePageInterface.swift */,
 				54FEF01F24ADD5AA00ED97F4 /* Model */,
 				54FEF01E24ADD5A200ED97F4 /* View */,
 				54FEF01D24ADD59800ED97F4 /* Controller */,
@@ -425,8 +488,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				54FEEFE424ADCE2D00ED97F4 /* AppDelegate.swift in Sources */,
+				541C085F24B6F37E0067967D /* HomePageInterface.swift in Sources */,
 				54FEF01B24ADD21A00ED97F4 /* HomeView.swift in Sources */,
+				541C086224B6F9050067967D /* UIColor+Extension.swift in Sources */,
 				54FEEFEE24ADCE2D00ED97F4 /* NeteaseMusic_Comment.xcdatamodeld in Sources */,
+				541F818424AF134E00610174 /* PraiseLayer.swift in Sources */,
+				541C085B24B6F2910067967D /* PersonalViewController.swift in Sources */,
+				541C085D24B6F2CF0067967D /* PersonalView.swift in Sources */,
 				54FEF01724ADCE5E00ED97F4 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

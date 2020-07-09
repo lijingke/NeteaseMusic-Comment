@@ -8,8 +8,12 @@
 
 import UIKit
 import SnapKit
+import iOSPalette
 
 class HomeView: UIView {
+    
+    // MARK: Property
+    weak var delegate: HomePageEventProtocol?
     
     public var userId: String? {
         didSet {
@@ -54,6 +58,7 @@ class HomeView: UIView {
         btn.layer.borderWidth = 1.0
         btn.layer.borderColor = UIColor.systemBlue.cgColor
         btn.layer.cornerRadius = 5
+        btn.addTarget(self, action: #selector(self.confirmAction), for: .touchUpInside)
         return btn
     }()
     
@@ -75,10 +80,51 @@ class HomeView: UIView {
         return view
     }()
     
+    lazy var praiseLayer: PraiseLayer = {
+        let layer = PraiseLayer(rectSize: UIScreen.main.bounds)
+        return layer
+    }()
+    
+    lazy var testView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .green
+        view.layer.cornerRadius = 20
+        view.layer.masksToBounds = true
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        
+        let fromColor = UIColor.green.cgColor
+        let minColor = UIColor.red.cgColor
+        let toColor = UIColor.blue.cgColor
+        
+        gradientLayer.colors = [fromColor,minColor,toColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.locations = [0,0.3,1]
+        view.layer.addSublayer(gradientLayer)
+        return view
+    }()
+    
+    lazy var testCover: UIImageView = {
+        let view = UIImageView()
+        let image = UIImage(named: "")!
+        image.getPaletteImageColor(with: .ALL_MODE_PALETTE) { (recommendColor, allModelColorDic, error) in
+            
+        }
+        return view
+    }()
+    
 }
 
 // MARK: - Event
 extension HomeView {
+    
+    @objc func confirmAction() {
+        layer.addSublayer(praiseLayer)
+        delegate?.goToPersonalVC()
+    }
+    
     @objc func tapAction() {
         inputField.resignFirstResponder()
     }
@@ -135,6 +181,14 @@ extension HomeView {
         addGestureRecognizer(tap)
         
         rotate()
+        
+        addSubview(testView)
+        
+        testView.snp.makeConstraints { (make) in
+            make.top.equalTo(jumpBtn.snp.bottom).offset(30)
+            make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 90, height: 90))
+        }
     }
     
     public func rotate() {

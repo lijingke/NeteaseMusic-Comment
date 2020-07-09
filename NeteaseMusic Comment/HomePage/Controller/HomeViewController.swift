@@ -23,6 +23,11 @@ class HomeViewController: UIViewController {
         recognition()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -31,9 +36,18 @@ class HomeViewController: UIViewController {
     
     lazy var mainView: HomeView = {
         let view = HomeView()
+        view.delegate = self
         return view
     }()
     
+}
+
+// MAKR: - HomePageEventProtocol
+extension HomeViewController: HomePageEventProtocol {
+    func goToPersonalVC() {
+        let vc = PersonalViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - UI
