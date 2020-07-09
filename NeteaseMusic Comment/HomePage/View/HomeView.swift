@@ -31,6 +31,22 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = testView.bounds
+        
+        let fromColor = UIColor.green.cgColor
+        let minColor = UIColor.red.cgColor
+        let toColor = UIColor.blue.cgColor
+        
+        gradientLayer.colors = [fromColor,minColor,toColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.locations = [0,0.3,1]
+        testView.layer.addSublayer(gradientLayer)
+    }
+    
     // MARK: Lazy Get
     
     lazy var titleLabel: UILabel = {
@@ -87,31 +103,9 @@ class HomeView: UIView {
     
     lazy var testView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
+        view.backgroundColor = .white
         view.layer.cornerRadius = 20
         view.layer.masksToBounds = true
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        
-        let fromColor = UIColor.green.cgColor
-        let minColor = UIColor.red.cgColor
-        let toColor = UIColor.blue.cgColor
-        
-        gradientLayer.colors = [fromColor,minColor,toColor]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-        gradientLayer.locations = [0,0.3,1]
-        view.layer.addSublayer(gradientLayer)
-        return view
-    }()
-    
-    lazy var testCover: UIImageView = {
-        let view = UIImageView()
-        let image = UIImage(named: "")!
-        image.getPaletteImageColor(with: .ALL_MODE_PALETTE) { (recommendColor, allModelColorDic, error) in
-            
-        }
         return view
     }()
     

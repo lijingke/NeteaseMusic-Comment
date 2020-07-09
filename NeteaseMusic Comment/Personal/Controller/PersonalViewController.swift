@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalViewController: UIViewController {
+class PersonalViewController: SuperViewController {
     
     // MARK: Lift Cycle
     override func viewDidLoad() {
@@ -27,6 +27,7 @@ class PersonalViewController: UIViewController {
 
 extension PersonalViewController {
     private func setupUI() {
+        navigationItem.title = "Wheel"
         view.addSubview(mainView)
         mainView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
