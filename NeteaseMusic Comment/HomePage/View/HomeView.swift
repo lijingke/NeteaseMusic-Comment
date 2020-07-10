@@ -34,7 +34,7 @@ class HomeView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = testView.bounds
+        gradientLayer.frame = colorView.bounds
         
         let fromColor = UIColor.green.cgColor
         let minColor = UIColor.red.cgColor
@@ -44,7 +44,7 @@ class HomeView: UIView {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         gradientLayer.locations = [0,0.3,1]
-        testView.layer.addSublayer(gradientLayer)
+        colorView.layer.addSublayer(gradientLayer)
     }
     
     // MARK: Lazy Get
@@ -101,7 +101,7 @@ class HomeView: UIView {
         return layer
     }()
     
-    lazy var testView: UIView = {
+    lazy var colorView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 20
@@ -176,9 +176,9 @@ extension HomeView {
         
         rotate()
         
-        addSubview(testView)
+        addSubview(colorView)
         
-        testView.snp.makeConstraints { (make) in
+        colorView.snp.makeConstraints { (make) in
             make.top.equalTo(jumpBtn.snp.bottom).offset(30)
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 90, height: 90))
